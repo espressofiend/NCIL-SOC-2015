@@ -8,10 +8,15 @@ One second after the cue appeared, the gesture or control movie would play. Thes
 had variable durations. Following the movie, there was a blank screen of varying
 duration and then a prompt to make a response.
 
-The following is an explanation of the relevant columns; open the CSV file in
-Excel to view the data:
+The following is an explanation of the relevant columns; CSV is a common file
+format that you can open in Excel to view the data. Note that "CSV" stands for
+"comma separated values" which means that, in contrast to the input file we
+worked with last week that had whitespace between columns, in this file the
+column separator is a comma, so you will have to take this into account when
+splitting the input lines in Python:
+
 Column L/RT: reaction time in millseconds - time between onset of response cue and subject's response
-M/Correct: TRUE if correct answeerw was given, else FALSE
+M/Correct: TRUE if correct answer was given, else FALSE
 N/Started@: time the trial started at, relative to when the stim program was started, in msec
 O/Load time: Amount of time, after the trial started, required to load the stimuli. But see next column...
 P/TotalInt: Load time + amount of extra time it took before the first stimulus of the trial (which was a blank screen) to be shown on-screen. This accounts for the fact that after the load time, DirectRT needs to wait for the next screen refresh to draw a stimulus, which can be as much as 17 msec.
